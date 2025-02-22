@@ -1,0 +1,21 @@
+{
+	"manifest_version": 3,
+	"name": "Clipboard Viewer",
+	"version": "1.0",
+	"description": "A floating button that displays clipboard content.",
+	"permissions": ["clipboardRead", "activeTab", "scripting"],
+	"host_permissions": ["<all_urls>"],
+	"web_accessible_resources": [
+	  {
+		"resources": ["icons/content_paste.svg", "icons/close.svg"],
+		"matches": ["<all_urls>"]
+	  }
+	],
+	"content_scripts": [
+	  {
+		"matches": ["<all_urls>"],
+		"js": ["content.js"]
+	  }
+	]
+  }
+  

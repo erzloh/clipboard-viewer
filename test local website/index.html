@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	Hey, I'm a test local website.
+	<p class="test">This is a paragraph.</p>
+</body>
+<script>
+	const p = document.querySelector('.test');
+	// copy clipboard content and write it in the p each time a copy event is triggered
+	document.addEventListener('copy', () => {
+		navigator.clipboard.readText().then(text => {
+			p.textContent = text;
+		});
+	});
+	// copy at first load
+	navigator.clipboard.readText().then(text => {
+		p.textContent = text;
+	});
+</script>
+</html>
